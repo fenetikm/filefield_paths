@@ -103,7 +103,7 @@ class FileFieldPathsManager {
     $this->setFieldPathSettings($field_definition->getThirdPartySettings('filefield_paths'));
 
     // If FFP is enabled on this field, process it.
-    if ($this->fieldPathSettings['enabled']) {
+    if (isset($this->fieldPathSettings['enabled']) && $this->fieldPathSettings['enabled']) {
       $translated_files = array();
       // Get the machine name of the field.
       $field_name = $field_definition->getName();
